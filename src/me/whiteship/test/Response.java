@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 
 import java.io.UnsupportedEncodingException;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.mock.web.MockHttpServletRequest;
 import org.springframework.mock.web.MockHttpServletResponse;
 import org.springframework.web.servlet.ModelAndView;
@@ -96,6 +97,17 @@ public class Response {
 		assertThat(response.getStatus(), is(statusCode));
 		return this;
 	}
+	
+	/**
+	 * HTTPStatus를 사용해서 상태 코드를 확인합니다.
+	 * @param statusCode 상태 코드
+	 * @return Response 타입을 반환하여 Method Chaining을 사용할 수 있게 합니다.
+	 */
+	public Response assertStatus(HttpStatus statusCode) {
+		assertThat(response.getStatus(), is(statusCode.value()));
+		return this;
+	}
+	
 	
 	/**
 	 * 응답의 본문을 확인합니다.
