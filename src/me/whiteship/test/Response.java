@@ -15,7 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
  * 테스트 했던 요청과 그에 대한 응답 그리고 핸들러가 반환하는 ModelAndView를 참조할 수 있으며, 
  * 각종 assertXXX 문을 활용하여 응답의 결과를 검증할 수 있습니다.
  * 
- * @author keesun
+ * @author Keesun Baik
  *
  */
 public class Response {
